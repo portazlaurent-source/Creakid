@@ -463,6 +463,39 @@ section { padding-block: clamp(48px, 8vw, 96px); }
 }
 
 /* =========================================================
+   Section avis — Trustindex widget (index.html)
+   ========================================================= */
+.section-avis {
+  background: var(--paper);
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+}
+
+.avis-widget {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  min-height: 56px;
+  position: relative;
+}
+
+.avis-loading {
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+  padding: 20px 0 4px;
+  margin: 0;
+}
+
+.avis-fallback {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+.avis-fallback p {
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+/* =========================================================
    Carousel — Aire de Jeux (concept.html)
    ========================================================= */
 .carousel {
