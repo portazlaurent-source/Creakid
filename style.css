@@ -463,6 +463,18 @@ section { padding-block: clamp(48px, 8vw, 96px); }
 }
 
 /* =========================================================
+   Home gallery carousel wrap (index.html)
+   ========================================================= */
+.home-carousel-wrap {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+  margin-top: 28px;
+}
+
+/* =========================================================
    Section avis — Trustindex widget (index.html)
    ========================================================= */
 .section-avis {

@@ -139,33 +139,6 @@
   .pillar p { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
   .pillar .age { display: block; font-family: var(--font-script); color: var(--peach-deep); font-weight: 700; font-size: 1.2rem; margin-top: 8px; }
 
-  /* ==================== GALLERY ==================== */
-  .gallery {
-    display: grid;
-    gap: 14px;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 28px;
-  }
-  @media (min-width: 760px) {
-    .gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 160px; }
-    .gallery > :nth-child(1) { grid-column: span 3; grid-row: span 2; }
-    .gallery > :nth-child(2) { grid-column: span 3; }
-    .gallery > :nth-child(3) { grid-column: span 2; }
-    .gallery > :nth-child(4) { grid-column: span 1; }
-    .gallery > :nth-child(5) { grid-column: span 3; }
-    .gallery > :nth-child(6) { grid-column: span 3; }
-  }
-  .gallery .ph, .gallery img {
-    aspect-ratio: 4/3;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--r-md);
-  }
-  @media (min-width: 760px) {
-    .gallery .ph, .gallery img { aspect-ratio: auto; }
-  }
-
   /* ==================== PLANNING PREVIEW ==================== */
   .week {
     display: grid;
@@ -489,31 +462,62 @@
       <p class="muted" style="max-width:540px; margin: 0 auto;">Un cocon lumineux et coloré, pensé pour que petits et grands se sentent comme à la maison.</p>
     </div>
 
-    <div class="gallery">
-      <picture>
-        <source srcset="assets/photo-aire-jeux.webp" type="image/webp">
-        <img src="assets/photo-aire-jeux.jpg" alt="L'aire de jeux principale avec son mur fleuri" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/photo-circuit.webp" type="image/webp">
-        <img src="assets/photo-circuit.jpg" alt="Espace circuits et jeux de construction" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/photo-atelier.webp" type="image/webp">
-        <img src="assets/photo-atelier.jpg" alt="L'espace atelier avec son grand tableau noir" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/photo-motricite.webp" type="image/webp">
-        <img src="assets/photo-motricite.jpg" alt="Espace motricité avec triangle et toboggan" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/photo-lecture.webp" type="image/webp">
-        <img src="assets/photo-lecture.jpg" alt="Coin lecture cosy et bibliothèque" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="assets/photo-cafe.webp" type="image/webp">
-        <img src="assets/photo-cafe.jpg" alt="Coin café et détente" loading="lazy">
-      </picture>
+    <div class="home-carousel-wrap carousel" id="carousel-galerie"
+         role="region" aria-label="Photos du local CRÉA-KID" aria-roledescription="carrousel" tabindex="0">
+      <div class="carousel-track">
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="1 sur 6" aria-hidden="false">
+          <picture>
+            <source srcset="assets/photo-aire-jeux.webp" type="image/webp">
+            <img src="assets/photo-aire-jeux.jpg" alt="L'aire de jeux principale avec son mur fleuri">
+          </picture>
+        </div>
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="2 sur 6" aria-hidden="true">
+          <picture>
+            <source srcset="assets/photo-atelier.webp" type="image/webp">
+            <img src="assets/photo-atelier.jpg" alt="L'espace atelier avec son grand tableau noir" loading="lazy">
+          </picture>
+        </div>
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="3 sur 6" aria-hidden="true">
+          <picture>
+            <source srcset="assets/photo-circuit.webp" type="image/webp">
+            <img src="assets/photo-circuit.jpg" alt="Espace circuits et jeux de construction" loading="lazy">
+          </picture>
+        </div>
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="4 sur 6" aria-hidden="true">
+          <picture>
+            <source srcset="assets/photo-lecture.webp" type="image/webp">
+            <img src="assets/photo-lecture.jpg" alt="Coin lecture cosy et bibliothèque" loading="lazy">
+          </picture>
+        </div>
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="5 sur 6" aria-hidden="true">
+          <picture>
+            <source srcset="assets/photo-motricite.webp" type="image/webp">
+            <img src="assets/photo-motricite.jpg" alt="Espace motricité avec triangle et toboggan" loading="lazy">
+          </picture>
+        </div>
+        <div class="carousel-slide" role="group" aria-roledescription="diapositive" aria-label="6 sur 6" aria-hidden="true">
+          <picture>
+            <source srcset="assets/photo-bebe.webp" type="image/webp">
+            <img src="assets/photo-bebe.jpg" alt="Espace bébé avec parc et jouets au sol" loading="lazy">
+          </picture>
+        </div>
+      </div>
+
+      <button class="carousel-btn carousel-prev" type="button" aria-label="Photo précédente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="carousel-btn carousel-next" type="button" aria-label="Photo suivante">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="carousel-dots" role="tablist" aria-label="Sélectionner une photo">
+        <button class="carousel-dot active" type="button" role="tab" aria-selected="true"  aria-label="Photo 1 sur 6"></button>
+        <button class="carousel-dot"        type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 6"></button>
+        <button class="carousel-dot"        type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 6"></button>
+        <button class="carousel-dot"        type="button" role="tab" aria-selected="false" aria-label="Photo 4 sur 6"></button>
+        <button class="carousel-dot"        type="button" role="tab" aria-selected="false" aria-label="Photo 5 sur 6"></button>
+        <button class="carousel-dot"        type="button" role="tab" aria-selected="false" aria-label="Photo 6 sur 6"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -527,7 +531,7 @@
       <p class="muted" style="max-width:520px; margin: 0 auto;">Ouvert du mardi au samedi, avec des ateliers spéciaux tout au long de la semaine.</p>
     </div>
 
-    <div class="week">
+    <div class="week" id="planning-week">
       <div class="day closed"><div class="day-name">Lundi</div><div class="day-status">Fermé</div></div>
       <div class="day"><div class="day-name">Mardi</div><div class="day-status">9h30-18h</div>
         <div class="day-events"><span class="day-event e-mint">Bébé signe · 10h</span></div>
@@ -704,5 +708,37 @@
   </div>
 </footer>
 
+<script src="js/carousel.js"></script>
+<script>
+(function () {
+  var container = document.getElementById('planning-week');
+  if (!container) return;
+
+  var COLOR_MAP = { peach: '', mint: ' e-mint', coral: ' e-coral', gold: ' e-gold' };
+
+  fetch('data/activites.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var html = '';
+      data.jours.forEach(function (jour) {
+        var closed = !jour.ouvert;
+        html += '<div class="day' + (closed ? ' closed' : '') + '">';
+        html += '<div class="day-name">' + jour.nom + '</div>';
+        html += '<div class="day-status">' + (closed ? 'Fermé' : (jour.horaires || '9h30-18h')) + '</div>';
+        if (!closed && jour.activites && jour.activites.length) {
+          html += '<div class="day-events">';
+          jour.activites.forEach(function (act) {
+            var cls = 'day-event' + (COLOR_MAP[act.couleur] || '');
+            html += '<span class="' + cls + '">' + act.titre + ' · ' + act.creneau + '</span>';
+          });
+          html += '</div>';
+        }
+        html += '</div>';
+      });
+      container.innerHTML = html;
+    })
+    .catch(function () { /* garde le fallback HTML statique */ });
+}());
+</script>
 </body>
 </html>

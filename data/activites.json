@@ -1,0 +1,54 @@
+{
+  "_aide": "COMMENT MODIFIER LE PLANNING — Pour ajouter une activité : copie un bloc { 'titre':..., 'creneau':..., 'couleur':... } dans le tableau 'activites' du jour voulu. Pour supprimer une activité : retire le bloc complet. Pour changer une couleur, utilise : 'peach' (orange), 'mint' (vert), 'coral' (rose/rouge), 'gold' (jaune). Les jours fermés ont 'ouvert': false. Les jours ouverts ont 'ouvert': true et un champ 'horaires'.",
+
+  "jours": [
+    {
+      "nom": "Lundi",
+      "ouvert": false
+    },
+    {
+      "nom": "Mardi",
+      "ouvert": true,
+      "horaires": "9h30-18h",
+      "activites": [
+        { "titre": "Bébé signe", "creneau": "10h", "couleur": "mint" }
+      ]
+    },
+    {
+      "nom": "Mercredi",
+      "ouvert": true,
+      "horaires": "9h30-18h",
+      "activites": [
+        { "titre": "Éveil musical", "creneau": "10h30", "couleur": "peach" }
+      ]
+    },
+    {
+      "nom": "Jeudi",
+      "ouvert": true,
+      "horaires": "9h30-18h",
+      "activites": [
+        { "titre": "Ass. mat.", "creneau": "matinée", "couleur": "coral" }
+      ]
+    },
+    {
+      "nom": "Vendredi",
+      "ouvert": true,
+      "horaires": "9h30-18h",
+      "activites": [
+        { "titre": "Atelier peinture", "creneau": "15h", "couleur": "gold" }
+      ]
+    },
+    {
+      "nom": "Samedi",
+      "ouvert": true,
+      "horaires": "9h30-18h",
+      "activites": [
+        { "titre": "Atelier famille", "creneau": "10h", "couleur": "coral" }
+      ]
+    },
+    {
+      "nom": "Dimanche",
+      "ouvert": false
+    }
+  ]
+}
