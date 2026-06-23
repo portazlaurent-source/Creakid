@@ -247,21 +247,36 @@
 
 </main>
 
+<!-- ===== FOOTER ===== -->
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg class="footer-brand-mark" viewBox="0 0 64 44"><path d="M6 38 A26 26 0 0 1 58 38" fill="none" stroke="#F5A56C" stroke-width="3.5" stroke-linecap="round"/><path d="M11 38 A21 21 0 0 1 53 38" fill="none" stroke="#9FE0B7" stroke-width="3.5" stroke-linecap="round"/><path d="M16 38 A16 16 0 0 1 48 38" fill="none" stroke="#F8CC7A" stroke-width="3.5" stroke-linecap="round"/><path d="M21 38 A11 11 0 0 1 43 38" fill="none" stroke="#F5B5B0" stroke-width="3.5" stroke-linecap="round"/></svg>
+          <svg class="footer-brand-mark" viewBox="0 0 64 44" aria-hidden="true">
+            <path d="M6 38 A26 26 0 0 1 58 38" fill="none" stroke="#F5A56C" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M11 38 A21 21 0 0 1 53 38" fill="none" stroke="#9FE0B7" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M16 38 A16 16 0 0 1 48 38" fill="none" stroke="#F8CC7A" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M21 38 A11 11 0 0 1 43 38" fill="none" stroke="#F5B5B0" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
           <strong>CREA-KID</strong>
         </div>
         <p>Plus qu'un espace de jeux : un lieu pour grandir ensemble, à Saint-Maximin-la-Sainte-Baume.</p>
         <div class="socials">
           <!-- TODO: vérifier l'URL Facebook exacte avec Marine -->
-          <a class="social-pill" href="https://facebook.com/CREAKID-St-Maximin" target="_blank" rel="noopener" aria-label="Retrouvez-nous sur Facebook (nouvelle fenêtre)">CREAKID-St Maximin</a>
-          <a class="social-pill" href="https://instagram.com/creakid_stmaximin" target="_blank" rel="noopener" aria-label="Retrouvez-nous sur Instagram (nouvelle fenêtre)">creakid_stmaximin</a>
+          <a class="social-pill" href="https://www.facebook.com/61581464325682" target="_blank" rel="noopener" aria-label="Retrouvez-nous sur Facebook (nouvelle fenêtre)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5C13 6.6 13.4 6 14.7 6H17V2.3C16.5 2.2 15.4 2 14 2c-2.7 0-4.5 1.6-4.5 4.5V10H6v4h3.5v8z"/></svg>
+            CREAKID-St Maximin
+          </a>
+          <a class="social-pill" href="https://instagram.com/creakid_stmaximin" target="_blank" rel="noopener" aria-label="Retrouvez-nous sur Instagram (nouvelle fenêtre)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            creakid_stmaximin
+          </a>
         </div>
       </div>
+
       <div>
         <h4>Le lieu</h4>
         <ul>
@@ -273,18 +288,56 @@
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Nous trouver</h4>
         <p>55 Avenue d'Estienne d'Orves<br>83470 St Maximin la Ste Baume</p>
-        <p style="margin-top:10px;"><a href="tel:0667443361">06 67 44 33 61</a><br><a href="mailto:marine.creakid@gmail.com">marine.creakid@gmail.com</a></p>
+        <p style="margin-top:10px;">
+          <a href="tel:0667443361">06 67 44 33 61</a><br>
+          <a href="mailto:marine.creakid@gmail.com">Envoyez un mail ICI</a>
+        </p>
         <p style="margin-top:10px;"><strong>Mardi → Samedi</strong><br>9h30-12h30 · 14h30-18h</p>
       </div>
     </div>
+
     <div class="footer-base">
       <span>© 2026 CREA-KID · Tous droits réservés</span>
-      <span>Fait avec ♥ à St Maximin</span>
+      <span>Fait avec <span class="heart">♥</span> à St Maximin</span>
     </div>
   </div>
 </footer>
+
+<script src="js/carousel.js"></script>
+<script>
+(function () {
+  var container = document.getElementById('planning-week');
+  if (!container) return;
+
+  var COLOR_MAP = { peach: '', mint: ' e-mint', coral: ' e-coral', gold: ' e-gold' };
+
+  fetch('data/activites.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var html = '';
+      data.jours.forEach(function (jour) {
+        var closed = !jour.ouvert;
+        html += '<div class="day' + (closed ? ' closed' : '') + '">';
+        html += '<div class="day-name">' + jour.nom + '</div>';
+        html += '<div class="day-status">' + (closed ? 'Fermé' : (jour.horaires || '9h30-18h')) + '</div>';
+        if (!closed && jour.activites && jour.activites.length) {
+          html += '<div class="day-events">';
+          jour.activites.forEach(function (act) {
+            var cls = 'day-event' + (COLOR_MAP[act.couleur] || '');
+            html += '<span class="' + cls + '">' + act.titre + ' · ' + act.creneau + '</span>';
+          });
+          html += '</div>';
+        }
+        html += '</div>';
+      });
+      container.innerHTML = html;
+    })
+    .catch(function () { /* garde le fallback HTML statique */ });
+}());
+  
 </body>
 </html>
