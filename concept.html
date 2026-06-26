@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5876QYMJ3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5876QYMJ3K');
+</script>
 <meta charset="utf-8">
 <title>Le concept — CREA-KID</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -166,10 +175,11 @@
     </a>
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
-      <a href="concept.html" class="active">Le concept</a>
+      <a href="concept.html" class="active">Concept</a>
       <a href="tarifs.html">Tarifs</a>
       <a href="planning.html">Planning</a>
       <a href="contact.html">Contact</a>
+      <a href="FAQ.html">FAQ</a>
     </nav>
     <a class="btn btn-primary btn-sm nav-cta" href="https://www.google.com/maps/search/?api=1&query=CREA-KID+55+Avenue+d%27Estienne+d%27Orves+83470+Saint-Maximin-la-Sainte-Baume" target="_blank" rel="noopener noreferrer">Nous trouver</a>
     <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('open')">
@@ -178,10 +188,11 @@
   </div>
   <nav id="mnav" class="mobile-nav" aria-label="Menu mobile">
     <a href="index.html">Accueil</a>
-    <a href="concept.html" class="active">Le concept</a>
+    <a href="concept.html" class="active">Concept</a>
     <a href="tarifs.html">Tarifs</a>
     <a href="planning.html">Planning</a>
     <a href="contact.html">Contact</a>
+    <a href="FAQ.html">FAQ</a>
     <a href="mentions-legales.html">Mentions légales</a>
   </nav>
 </header>
@@ -334,16 +345,11 @@
 <section class="space-section bg-gold">
   <div class="container">
     <div class="space reverse">
-      <div class="space-visual" style="background:linear-gradient(135deg,var(--gold-soft),var(--peach-soft));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;">
-        <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <rect x="10" y="26" width="44" height="28" rx="3" fill="#F8CC7A"/>
-          <rect x="10" y="26" width="44" height="6" fill="#E8B355"/>
-          <rect x="29" y="26" width="6" height="28" fill="#E8B355"/>
-          <path d="M32 26C20 26 18 14 26 14c4 0 6 4 6 12z" fill="#F5B5B0"/>
-          <path d="M32 26c12 0 14-12 6-12-4 0-6 4-6 12z" fill="#F5B5B0"/>
-        </svg>
-        <span style="font-family:var(--font-script);font-size:1.3rem;font-weight:700;color:var(--gold-deep);">Photo à venir</span>
-        <span style="font-size:0.85rem;color:var(--ink-mute);">Un anniversaire chez CREA-KID</span>
+      <div class="space-visual">
+        <picture>
+          <source srcset="assets/anniv.webp" type="image/webp">
+          <img src="assets/anniv.jpeg" alt="Espace anniversaire avec grand tableau noir" loading="lazy">
+        </picture>
       </div>
       <div class="space-body">
         <span class="tag tag-gold">04 · Privatisation</span>
@@ -421,12 +427,9 @@
           <p>Un petit geste qui change tout pour le copain qui voudra y jouer après.</p>
         </div>
       </div>
-      <div class="rule" style="grid-column: 1 / -1; justify-self: center; max-width: 500px;">
-        <div class="rule-num">5</div>
-        <div>
-          <h3>Les enfants sont sous la responsabilité de l'adulte accompagnant.</h3>
-        </div>
-      </div>
+    </div>
+    <div class="note" style="margin-top: 36px; text-align:center;">
+      <p class="muted" style="max-width:540px; margin: 0 auto;"><strong>Les enfants sont sous la responsabilité de l'adulte accompagnant.</strong></p>
     </div>
   </div>
 </section>
@@ -465,10 +468,11 @@
         <h4>Le lieu</h4>
         <ul>
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="concept.html">Le concept</a></li>
+          <li><a href="concept.html">Concept</a></li>
           <li><a href="tarifs.html">Tarifs</a></li>
           <li><a href="planning.html">Planning</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>

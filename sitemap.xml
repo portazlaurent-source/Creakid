@@ -25,6 +25,11 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+   <url>
+    <loc>https://creakid.fr/FAQ.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://creakid.fr/mentions-legales.html</loc>
     <changefreq>yearly</changefreq>
